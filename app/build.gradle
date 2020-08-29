@@ -1,0 +1,53 @@
+def plugins = [
+    "com.android.application",
+    "kotlin-android",
+    "kotlin-android-extensions",
+    "kotlin-kapt",
+    "dagger.hilt.android.plugin"
+]
+
+plugins.forEach { plugin ->
+    apply plugin: plugin
+}
+
+android {
+    compileSdkVersion sdk.compile
+
+    defaultConfig {
+        applicationId "com.bael.executor.demo"
+        minSdkVersion sdk.min
+        targetSdkVersion sdk.target
+        versionCode sdk.code
+        versionName sdk.version
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+def deps = [
+    "appcompat",
+    "hilt",
+    "lifecycle"
+]
+
+deps.forEach { dep ->
+    apply from: "$rootDir/deps/${dep}.gradle"
+}
+
+def modules = [
+    "lib_base",
+    "lib_threading",
+]
+
+dependencies {
+    modules.forEach { module ->
+        implementation project(":$module")
+    }
+}

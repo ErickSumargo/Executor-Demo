@@ -1,0 +1,15 @@
+rootProject.name = "Executor Demo"
+
+def modules = [
+    "app",
+    "lib_base",
+    "lib_threading",
+]
+
+modules.forEach { module ->
+    include ":$module"
+
+    if (module.contains("lib")) {
+        project(":$module").projectDir = new File("libs/$module")
+    }
+}
