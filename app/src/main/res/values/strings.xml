@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Executor Demo</string>
+    <string name="conflated">Conflated</string>
+    <string name="queue">Queue</string>
+    <string name="concurrent">Concurrent</string>
+    <string name="launch">Launch</string>
+    <string name="summary">: %1$d task(s) launched!</string>
+    <string name="progress">Task-%1$d completes in %1$d</string>
+</resources>

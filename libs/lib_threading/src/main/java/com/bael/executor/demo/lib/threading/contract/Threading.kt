@@ -5,15 +5,14 @@ import kotlinx.coroutines.CoroutineScope
 import kotlin.coroutines.CoroutineContext
 
 /**
- * Created by ErickSumargo on 15/06/20.
+ * Created by ErickSumargo on 15/09/20.
  */
 
 interface Threading : CoroutineScope {
-    val executorSchema: ExecutorSchema
 
-    fun launch(
-        thread: CoroutineContext = coroutineContext,
-        schema: ExecutorSchema = executorSchema,
-        block: suspend CoroutineScope.() -> Unit
+    fun <T> launch(
+        thread: CoroutineContext,
+        schema: ExecutorSchema,
+        block: suspend CoroutineScope.() -> T
     )
 }

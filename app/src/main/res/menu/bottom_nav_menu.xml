@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/conflatedScreen"
+        android:icon="@drawable/ic_split"
+        android:title="@string/conflated"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/queueScreen"
+        android:icon="@drawable/ic_split"
+        android:title="@string/queue"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/concurrentScreen"
+        android:icon="@drawable/ic_split"
+        android:title="@string/concurrent"
+        app:showAsAction="ifRoom" />
+</menu>

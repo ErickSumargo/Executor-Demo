@@ -1,5 +1,6 @@
-package com.bael.executor.demo.lib.threading.executor.conflated
+package com.bael.executor.demo.lib.threading.executor.conflated.implementation
 
+import com.bael.executor.demo.lib.threading.executor.conflated.contract.ConflatedExecutor
 import kotlinx.coroutines.CoroutineStart.LAZY
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
@@ -13,10 +14,10 @@ import javax.inject.Inject
  * Created by ErickSumargo on 01/09/20.
  */
 
-class ConflatedExecutor @Inject constructor() {
+class ConflatedExecutorImpl @Inject constructor() : ConflatedExecutor {
     private val activeTask: AtomicReference<Job?> = AtomicReference(null)
 
-    suspend fun <T> conflate(block: suspend () -> T): T {
+    override suspend fun <T> conflate(block: suspend () -> T): T {
         return coroutineScope {
             val newTask = async(start = LAZY) { block() }.also { task ->
                 task.invokeOnCompletion {

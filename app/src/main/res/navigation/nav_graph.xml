@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/conflatedScreen">
+
+    <fragment
+        android:id="@+id/conflatedScreen"
+        android:name="com.bael.executor.demo.screen.UI"
+        tools:layout="@layout/executor_layout">
+
+        <argument
+            android:name="type"
+            android:defaultValue="Conflated"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/queueScreen"
+        android:name="com.bael.executor.demo.screen.UI"
+        tools:layout="@layout/executor_layout">
+
+        <argument
+            android:name="type"
+            android:defaultValue="Queue"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/concurrentScreen"
+        android:name="com.bael.executor.demo.screen.UI"
+        tools:layout="@layout/executor_layout">
+
+        <argument
+            android:name="type"
+            android:defaultValue="Concurrent"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>

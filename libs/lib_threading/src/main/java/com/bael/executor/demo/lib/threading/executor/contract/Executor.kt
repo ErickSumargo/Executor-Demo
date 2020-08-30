@@ -3,13 +3,13 @@ package com.bael.executor.demo.lib.threading.executor.contract
 import com.bael.executor.demo.lib.threading.executor.schema.ExecutorSchema
 
 /**
- * Created by ErickSumargo on 01/06/20.
+ * Created by ErickSumargo on 01/09/20.
  */
 
 interface Executor {
 
-    suspend fun execute(
+    suspend fun <T> execute(
         schema: ExecutorSchema,
-        block: suspend () -> Unit
-    )
+        block: suspend () -> T
+    ): T
 }

@@ -13,12 +13,14 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
 }
 
 def deps = [
-    "appcompat",
     "assistedinject",
-    "coroutines",
     "fragment",
     "hilt",
     "lifecycle"

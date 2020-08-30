@@ -1,4 +1,5 @@
 dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$deps.lifecycle"
     implementation "androidx.lifecycle:lifecycle-extensions:$deps.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$deps.lifecycle"
 }
