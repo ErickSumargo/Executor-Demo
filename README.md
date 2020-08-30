@@ -2,7 +2,7 @@
 [<img src="assets/wallpaper.png">]()
 
 ## About
-Based on ...
+Based on https://medium.com/@ericksumargo888/coroutine-task-executor-916febd5c460.
 
 ## Demo
 | Conflated                 | Queue                 | Concurrent                 |
